@@ -1,0 +1,32 @@
+<!-- add-hospital.component.html -->
+<div class="add-hospital-container">
+  <h2>Add Hospital</h2>
+  <form [formGroup]="hospitalForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Hospital Name</label>
+      <input id="name" formControlName="name" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="latitude">Latitude</label>
+      <input id="latitude" formControlName="latitude" type="number" />
+    </div>
+
+    <div class="form-group">
+      <label for="longitude">Longitude</label>
+      <input id="longitude" formControlName="longitude" type="number" />
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input id="address" formControlName="address" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="waitTime">Wait Time (minutes)</label>
+      <input id="waitTime" formControlName="waitTime" type="number" />
+    </div>
+
+    <button type="submit" [disabled]="hospitalForm.invalid">Add Hospital</button>
+  </form>
+</div>

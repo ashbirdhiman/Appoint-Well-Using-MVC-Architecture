@@ -1,0 +1,58 @@
+<div class="update-appointment-container">
+  <h2>Update Walk-In Appointment</h2>
+  <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="id">Appointment ID</label>
+      <input id="id" formControlName="id" type="number" />
+    </div>
+
+    <div class="form-group">
+      <label for="patientId">Patient ID</label>
+      <input id="patientId" formControlName="patientId" type="number" />
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="doctorId">Doctor ID</label>
+      <input id="doctorId" formControlName="doctorId" type="number" />
+    </div>
+
+    <div class="form-group">
+      <label for="oldTimeSlot">Old Time Slot</label>
+      <input id="oldTimeSlot" formControlName="oldTimeSlot" type="datetime-local" />
+    </div>
+
+    <div class="form-group">
+      <label for="updatedTimeSlot">Updated Time Slot</label>
+      <input id="updatedTimeSlot" formControlName="updatedTimeSlot" type="datetime-local" />
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select id="status" formControlName="status">
+        <option value="Pending">Pending</option>
+        <option value="Confirmed">Confirmed</option>
+        <option value="Cancelled">Cancelled</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="patientName">Patient Name</label>
+      <input id="patientName" formControlName="patientName" type="text" readonly />
+    </div>
+
+
+
+      <label for="doctorId">Select Doctor</label>
+      <select id="se" formControlName="doctorId">
+        <option value="">Select Doctor</option> <!-- Placeholder option -->
+        <option *ngFor="let doctor of doctors" [value]="doctor.id">
+          {{ doctor.name }}
+        </option>
+      </select>
+
+    <button type="submit" [disabled]="appointmentForm.invalid">Update Appointment</button>
+  </form>
+</div>

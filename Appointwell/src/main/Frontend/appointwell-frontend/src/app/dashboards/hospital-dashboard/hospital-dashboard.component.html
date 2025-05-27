@@ -1,0 +1,31 @@
+<!-- src/app/components/dashboard/dashboard.component.html -->
+
+<div class="container mt-5">
+  <h2 class="text-center">Walk-in Appointments Dashboard</h2>
+  <table class="table table-bordered mt-4">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Patient Name</th>
+      <th>Appointment Date</th>
+      <th>Time</th>
+      <th>Updated Time</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let appointment of walkInAppointments">
+      <td>{{ appointment.id }}</td>
+      <td>{{ appointment.patient_name }}</td>  <!-- Display patient name -->
+      <td>{{ appointment.oldTimeSlot | date: 'shortDate' }}</td>  <!-- Format the appointment date -->
+      <td>{{ appointment.oldTimeSlot | date: 'shortTime' }}</td>  <!-- Format the appointment time -->
+      <td>{{ appointment.updatedTimeSlot | date: 'shortTime' }}</td>  <!-- Format the appointment time -->
+      <td>{{ appointment.status }}</td>  <!-- Display the appointment status -->
+      <td>
+        <button class="btn btn-primary" (click)="onActionClick(appointment.id,appointment.patient_name)">Action</button>  <!-- Action button -->
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

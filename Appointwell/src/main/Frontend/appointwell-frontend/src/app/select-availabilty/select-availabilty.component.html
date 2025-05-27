@@ -1,0 +1,19 @@
+<div>
+  <h2>Select Available Slots for Doctor</h2>
+  <label for="doctorSelect">Choose a doctor:</label>
+  <select id="doctorSelect" (change)="onDoctorChange($event)">
+    <option *ngFor="let doctorId of [1, 2, 3, 4, 5]" [value]="doctorId">
+      Doctor {{ doctorId }}
+    </option>
+  </select>
+
+  <h3>Available Slots</h3>
+  <ul *ngIf="availableSlots.length > 0; else noSlots">
+    <li *ngFor="let slot of availableSlots">
+      Date: {{ slot.available_date }}, Time: {{ slot.start_time }} - {{ slot.end_time }}
+    </li>
+  </ul>
+  <ng-template #noSlots>
+    <p>No available slots for the selected doctor.</p>
+  </ng-template>
+</div>

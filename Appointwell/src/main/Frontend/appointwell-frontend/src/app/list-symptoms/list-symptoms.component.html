@@ -1,0 +1,25 @@
+<div class="symptom-list">
+  <div *ngFor="let symptom of symptoms" class="symptom-item">
+    <label class="symptom-label">
+      <input type="checkbox" (change)="onCheckboxChange($event, symptom)">
+      {{ symptom.name }}
+    </label>
+    <select [(ngModel)]="symptom.severity" (ngModelChange)="onSeverityChange(symptom, $event)" class="severity-select">
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+  </div>
+</div>
+
+<div class="custom-symptom">
+  <input type="text" [(ngModel)]="customSymptomName" placeholder="Enter custom symptom" class="custom-symptom-input">
+  <select [(ngModel)]="customSymptomSeverity" class="severity-select">
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+    <option value="High">High</option>
+  </select>
+  <button class="add-symptom-button" (click)="addCustomSymptom()">Add Symptom</button>
+</div>
+
+<button class="next-button" (click)="nextStep()">Next</button>

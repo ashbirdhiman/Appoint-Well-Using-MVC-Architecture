@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.hospital-list {
+  flex: 0 0 40%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+}
+
+.hospital-list h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-content h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin: 0;
+}
+
+.card-content p {
+  color: #555;
+  margin: 5px 0;
+}
+
+.hospital-details {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.hospital-details li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.hospital-details i {
+  color: #007bff;
+  margin-right: 8px;
+}
+
+.map-view {
+  flex: 0 0 60%;
+  height: 100%;
+}
+
+.location-setting {
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Centers the content horizontally */
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;  /* Adds some space below */
+}
+
+.location-setting label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.location-setting input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  width: 200px;  /* Sets a width to help center it visually */
+}
+
+.location-setting button {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.location-setting button:hover {
+  background-color: #0056b3;
+}
+
+
+

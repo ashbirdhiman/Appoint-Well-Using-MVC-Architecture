@@ -1,0 +1,26 @@
+<div class="dashboard-container">
+  <section class="dashboard-cards">
+    <div class="card">
+      <h3>Total Hospitals</h3>
+      <p>{{ totalHospitals }}</p>
+    </div>
+    <div class="card">
+      <h3>Active Appointments</h3>
+      <p>{{ activeAppointments }}</p>
+    </div>
+    <div class="card">
+      <h3>Doctors Available</h3>
+      <p>{{ doctorsAvailable }}</p>
+    </div>
+    <div class="card">
+      <h3>Patients Registered</h3>
+      <p>{{ patientsRegistered }}</p>
+    </div>
+  </section>
+
+  <section class="dashboard-actions">
+    <button (click)="addNewHospital()">Add New Hospital</button>
+    <button (click)="addNewDoctor()">Add New Doctor</button>
+    <button (click)="assignDoctor()">Assign Doctor to Hospital</button>
+  </section>
+</div>

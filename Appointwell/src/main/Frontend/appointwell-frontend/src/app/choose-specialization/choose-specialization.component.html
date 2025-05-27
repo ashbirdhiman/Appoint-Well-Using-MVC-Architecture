@@ -1,0 +1,14 @@
+<!-- choose-specialization.component.html -->
+<div class="container">
+  <h2>Choose Specialization and Doctor</h2>
+  <select [(ngModel)]="selectedSpecialization" (change)="onSpecializationChange()">
+    <option *ngFor="let specialization of specializations" [value]="specialization">
+      {{ specialization }}
+    </option>
+  </select>
+  <ul>
+    <li *ngFor="let doctor of availableDoctors" (click)="selectDoctor(doctor)">
+      {{ doctor }}
+    </li>
+  </ul>
+</div>

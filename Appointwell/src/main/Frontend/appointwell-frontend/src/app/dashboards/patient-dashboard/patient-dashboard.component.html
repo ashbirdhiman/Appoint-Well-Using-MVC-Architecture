@@ -1,0 +1,37 @@
+<div class="dashboard">
+  <div class="dashboard-header">
+    <h2>My Appointments</h2>
+    <p>View your scheduled appointments and manage them.</p>
+  </div>
+
+  <!-- List of Appointments Section -->
+  <div class="appointment-list" *ngIf="appointments && appointments.length > 0; else noAppointments">
+    <div class="appointment" *ngFor="let appointment of appointments">
+      <h3>{{ appointment.id }}</h3>
+      <p>Date: {{ appointment.date | date: 'fullDate' }}</p>
+      <p>Time: {{ appointment.hospitalName }}</p>
+      <p>Status: {{ appointment.status }}</p>
+      <button class="btn btn-link" (click)="viewAppointmentDetails(appointment.id)">View Details</button>
+    </div>
+  </div>
+
+  <!-- No Appointments Template -->
+  <ng-template #noAppointments>
+    <p class="no-appointments">You have no scheduled appointments at the moment.</p>
+  </ng-template>
+
+  <!-- Book Appointment Prompt -->
+  <div class="book-appointment-prompt">
+    <h3>Want to book an appointment?</h3>
+    <button class="btn btn-primary" (click)="navigateToBookAppointment()">Book Appointment</button>
+  </div>
+
+  <div class="walk-in-appointment">
+    <p>
+      Are you looking for a walk-in appointment? Click the button below to directly book an appointment based on the wait times of nearby hospitals.
+    </p>
+    <button (click)="bookWalkInAppointment()" class="book-button">
+      Check and Book Appointment
+    </button>
+  </div>
+</div>

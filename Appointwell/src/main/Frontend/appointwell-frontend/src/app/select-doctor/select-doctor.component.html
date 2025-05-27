@@ -1,0 +1,14 @@
+<!-- select-doctor.component.html -->
+<div class="container">
+  <h2>Select Doctor</h2>
+  <div class="doctor-cards">
+    <div *ngFor="let doctor of doctors" class="card" (click)="selectDoctor(doctor)">
+      <div class="card-content">
+        <h2>{{ doctor.name }}</h2>
+        <h3>Specialization: {{ doctor.specialization }}</h3>
+<!--        <h3>Experience: {{ doctor. }} years</h3>-->
+
+      </div>
+    </div>
+  </div>
+</div>

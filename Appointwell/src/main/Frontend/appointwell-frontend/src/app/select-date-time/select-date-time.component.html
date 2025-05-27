@@ -1,0 +1,35 @@
+<div class="calendar">
+  <div class="calendar-header">
+    <button (click)="previousMonth()">Previous</button>
+    <span>{{ monthNames[month] }} {{ year }}</span>
+    <button (click)="nextMonth()">Next</button>
+  </div>
+
+
+  <div class="days">
+    <div *ngFor="let week of days">
+      <div *ngFor="let day of week"
+           class="day"
+           [ngClass]="{
+             'available': isAvailable(day),
+             'unavailable': !isAvailable(day) && day !== 0,
+             'selected': isSelected(day)
+           }"
+           (click)="selectDate(day)">
+        {{ day !== 0 ? day : '' }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Time selection section -->
+  <div class="time-picker">
+    <label for="time">Select Time:</label>
+    <select id="time" [(ngModel)]="time" (change)="selectTime(time)">
+      <option value="" disabled>Select a time</option>
+      <option *ngFor="let timeSlot of availableTimes" [value]="timeSlot">{{ timeSlot }}</option>
+    </select>
+  </div>
+
+  <!-- Next Step Button -->
+  <button (click)="nextStep()">Next</button>
+</div>

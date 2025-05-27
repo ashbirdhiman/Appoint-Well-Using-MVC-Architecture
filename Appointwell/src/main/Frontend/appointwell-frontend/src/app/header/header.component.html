@@ -1,0 +1,32 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <img src="assets/logo.png" alt="Logo" class="logo">
+    <span class="navbar-title">       AppointWell Appointment System</span>
+  </div>
+  <div class="navbar-right">
+    <ng-container *ngIf="!isLoggedIn; else loggedInTemplate">
+      <button class="btn btn-link" (click)="navigateToLogin()">Login</button>
+      <button class="btn btn-primary" (click)="navigateToSignup()">Sign Up</button>
+    </ng-container>
+    <ng-template #loggedInTemplate>
+      <ng-container [ngSwitch]="userRole">
+        <ng-container *ngSwitchCase="'patient'">
+          <button class="btn btn-link" routerLink="/select-hospital">Book Appointment</button>
+          <button class="btn btn-link" routerLink="/view-details">Profile</button>
+          <!-- Accessibility Button for Text-to-Speech -->
+          <button class="btn btn-link" (click)="startTextToSpeech()">Enable Text-to-Speech</button>
+        </ng-container>
+        <ng-container *ngSwitchCase="'doctor'">
+          <button class="btn btn-link" routerLink="/add-availability">Add Availability</button>
+          <button class="btn btn-link" routerLink="/view-details">View Details</button>
+        </ng-container>
+        <ng-container *ngSwitchCase="'admin'">
+          <button class="btn btn-link" routerLink="/add-hospital">Add New Hospital</button>
+          <button class="btn btn-link" routerLink="/add-doctor">Add Doctor to Hospital</button>
+          <button class="btn btn-link" routerLink="/assign-doctor">Assign Doctor to Hospital</button>
+        </ng-container>
+      </ng-container>
+      <button class="btn btn-secondary" (click)="logout()">Logout</button>
+    </ng-template>
+  </div>
+</nav>

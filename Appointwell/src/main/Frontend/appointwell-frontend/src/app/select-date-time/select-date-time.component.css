@@ -1,0 +1,101 @@
+/* General Styles */
+.calendar {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-header button {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.calendar-header span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.weekdays {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.day {
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.day.available {
+  background-color: #4CAF50; /* Green for available */
+}
+
+.day.unavailable {
+  background-color: #B0BEC5; /* Grey for unavailable */
+}
+
+.day.selected {
+  background-color: #2196F3; /* Blue for selected day */
+  color: white;
+}
+
+.day:hover {
+  background-color: #f1f1f1;
+}
+
+/* Time picker styling */
+.time-picker {
+  margin-top: 20px;
+}
+
+.time-picker select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.time-picker label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Button for next step */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

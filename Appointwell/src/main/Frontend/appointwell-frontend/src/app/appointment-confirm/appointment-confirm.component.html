@@ -1,0 +1,36 @@
+<!-- appointment-confirm.component.html -->
+<div class="appointment-confirm-container">
+  <h2>Appointment Confirmation</h2>
+
+  <div class="appointment-detail">
+    <h3>Hospital Details</h3>
+    <p><strong>Name:</strong> {{ hospital?.name }}</p>
+    <p><strong>Address:</strong> {{ hospital?.address }}</p>
+  </div>
+
+  <div class="appointment-detail">
+    <h3>Doctor Details</h3>
+    <p><strong>Name:</strong> {{ doctor?.name }}</p>
+    <p><strong>Specialization:</strong> {{ specialization }}</p>
+  </div>
+
+  <div class="appointment-detail">
+    <h3>Appointment Date & Time</h3>
+    <p><strong>Date:</strong> {{ dateTime.date }}</p>
+    <p><strong>Time:</strong> {{ dateTime.time }}</p>
+  </div>
+
+  <div class="appointment-detail">
+    <h3>Symptoms</h3>
+    <ul>
+      <li *ngFor="let symptom of symptoms">{{ symptom.name }} <b>severity</b> {{symptom.severity}}</li>
+    </ul>
+  </div>
+  <qrcode [qrdata]=qrCodeData></qrcode>
+
+  Please Pay Here
+  <qrcode [qrdata]="qrcodeContent" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+
+
+  Powered By Matera
+</div>

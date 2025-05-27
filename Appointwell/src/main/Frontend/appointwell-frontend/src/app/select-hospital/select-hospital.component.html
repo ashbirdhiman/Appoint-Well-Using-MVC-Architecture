@@ -1,0 +1,38 @@
+<div class="location-setting">
+  <label for="location">Set Your Location:</label>
+  <input id="location" type="text" placeholder="Loyalist College in Toronto" />
+  <button (click)="useCurrentLocation()">Use Current Location</button>
+</div>
+<br><br>
+
+<div class="container">
+  <!-- Hospital List Section -->
+  <div class="hospital-list">
+    <h3>Select Hospitals Nearby</h3>
+    <div *ngFor="let hospital of hospitals" class="card" (click)="selectHospital(hospital)">
+      <div class="card-content">
+        <h3 class="hospital-name">{{ hospital.name }}</h3>
+        <p class="hospital-address">{{ hospital.address }}</p>
+        <ul class="hospital-details">
+          <li>
+            <i class="fas fa-clock"></i>
+            <strong>Today's Emergency Wait Time:</strong> {{ hospital.waitTime }}
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <strong>Distance:</strong> {{ hospital.distance?.toPrecision(2) }} km
+          </li>
+          <li *ngIf="hospital.isFarthest">
+            <i class="fas fa-tag"></i>
+            <strong>Discount:</strong> {{ hospital.discount }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map View Section -->
+  <div class="map-view">
+    <app-map-view></app-map-view>
+  </div>
+</div>
