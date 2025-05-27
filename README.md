@@ -4,6 +4,7 @@
 
 A **Spring Boot** and **Angular**-based full-stack application for appointment management.
 
+This is project which i made in three-days hackathon in Loyalist College of Toronto powered by matera. The date of the hackathon was 8-10 November, 2024.
 ---
 
 ## 📁 Project Structure
